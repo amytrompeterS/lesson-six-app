@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useTheme } from 'vuetify'
+import LinkButton from './LinkButton.vue'
 
 const theme = useTheme()
 const isDark = ref(theme.global.name.value === 'dark')
@@ -58,9 +59,7 @@ onMounted(() => {
   </v-app>
 </template>
 
-<script setup>
-import LinkButton from './LinkButton.vue'
-</script>
+
 
 <style scoped>
 .name .last { margin-left: 8px; }
