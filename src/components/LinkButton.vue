@@ -13,13 +13,17 @@ const isInternal = computed(() => props.url && props.url.startsWith('/'))
 <template>
   <div>
     <v-btn v-if="isInternal" :to="props.url" variant="tonal" style="width:100%">
-      <v-icon v-if="props.icon" left>{{ props.icon }}</v-icon>
+      <v-icon v-if="props.icon" left class="icon-left">{{ props.icon }}</v-icon>
       {{ props.label }}
     </v-btn>
 
     <v-btn v-else :href="props.url" target="_blank" rel="noopener" variant="tonal" style="width:100%">
-      <v-icon v-if="props.icon" left>{{ props.icon }}</v-icon>
+      <v-icon v-if="props.icon" left class="icon-left">{{ props.icon }}</v-icon>
       {{ props.label }}
     </v-btn>
   </div>
 </template>
+
+<style scoped>
+.icon-left { margin-right: 8px; }
+</style>
