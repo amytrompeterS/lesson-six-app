@@ -38,8 +38,10 @@ onMounted(() => {
               </div>
 
               <div class="d-flex flex-column align-center">
-                <v-avatar size="96" class="mb-4" />
-                <h1 class="text-h5">Amy Trompeter</h1>
+                <v-avatar size="96" class="mb-4" color="primary">
+                  <v-icon size="36">mdi-account</v-icon>
+                </v-avatar>
+                <h1 class="text-h5 name"><span>Amy</span><span class="last">Trompeter</span></h1>
                 <div class="mb-4">Designer & developer — link-in-bio</div>
 
                 <v-row dense>
@@ -70,4 +72,8 @@ onMounted(() => {
     </v-main>
   </v-app>
 </template>
+
+<style scoped>
+.name .last { margin-left: 8px; }
+</style>
 
