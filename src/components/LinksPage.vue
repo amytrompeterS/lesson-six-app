@@ -66,6 +66,10 @@ onMounted(() => {
 
 <style scoped>
 .name .last { margin-left: 8px; }
-.name { color: var(--text-h); }
+.name { color: var(--text-h); font-size: 28px; line-height: 1.1; font-weight: 600; white-space: normal; overflow: visible; }
+
+@media (max-width: 600px) {
+  .name { font-size: 20px; }
+}
 </style>
 
