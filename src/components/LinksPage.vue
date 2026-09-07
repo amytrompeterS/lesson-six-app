@@ -46,22 +46,7 @@ onMounted(() => {
 
                 <v-row dense>
                   <v-col cols="12" v-for="(btn, i) in buttons" :key="i" class="mb-2">
-                    <v-btn
-                      v-if="btn.href"
-                      :href="btn.href"
-                      target="_blank"
-                      rel="noopener"
-                      style="width:100%"
-                      variant="tonal"
-                    >
-                      <v-icon left>{{ btn.icon }}</v-icon>
-                      {{ btn.label }}
-                    </v-btn>
-
-                    <v-btn v-else :to="btn.to" style="width:100%" variant="tonal">
-                      <v-icon left>{{ btn.icon }}</v-icon>
-                      {{ btn.label }}
-                    </v-btn>
+                    <LinkButton :label="btn.label" :url="btn.href || btn.to" :icon="btn.icon" />
                   </v-col>
                 </v-row>
               </div>
@@ -72,6 +57,10 @@ onMounted(() => {
     </v-main>
   </v-app>
 </template>
+
+<script setup>
+import LinkButton from './LinkButton.vue'
+</script>
 
 <style scoped>
 .name .last { margin-left: 8px; }
