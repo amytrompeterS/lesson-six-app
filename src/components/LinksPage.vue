@@ -7,8 +7,11 @@ const theme = useTheme()
 const isDark = ref(theme.global.name.value === 'dark')
 
 function toggleTheme() {
-  theme.global.name.value = isDark.value ? 'light' : 'dark'
-  isDark.value = !isDark.value
+  const nextDark = !isDark.value
+  theme.global.name.value = nextDark ? 'dark' : 'light'
+  isDark.value = nextDark
+  if (nextDark) document.documentElement.classList.add('dark')
+  else document.documentElement.classList.remove('dark')
 }
 
 const buttons = [
@@ -63,5 +66,6 @@ onMounted(() => {
 
 <style scoped>
 .name .last { margin-left: 8px; }
+.name { color: var(--text-h); }
 </style>
 
