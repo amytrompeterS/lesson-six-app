@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   label: string
-  url: string
+  url?: string
   icon?: string
 }>()
 
