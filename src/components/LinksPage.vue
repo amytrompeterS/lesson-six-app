@@ -27,6 +27,7 @@ onMounted(() => {
       <p class="tagline">Designer & developer — link-in-bio</p>
 
       <nav class="links">
+        <router-link class="btn" to="/about">About</router-link>
         <a class="btn" href="#" target="_blank" rel="noopener">Portfolio</a>
         <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="mailto:amy@example.com">Email</a>
